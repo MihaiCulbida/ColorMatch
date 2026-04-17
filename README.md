@@ -1,2 +1,2 @@
-# ColorGuess
-G
+# ColorMatch
+Color Match is a web-based memory and color perception game where players are briefly shown a color for a short period of time. After it disappears, the player must recreate the exact shade from memory by adjusting hue, saturation, and brightness. The closer the match is to the original color, the higher the score. The game challenges visual memory, attention to detail, and color recognition skills in a simple and interactive way.
