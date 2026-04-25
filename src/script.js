@@ -11,14 +11,26 @@ async function getColorName(h, s, l) {
   return data.name.value;
 }
 
-async function init() {
-  const { h, s, l } = randomHSL();
+const DIFFICULTIES = ['Easy', 'Medium', 'Hard'];
+let currentDifficulty = 0;
 
-  const box = document.querySelector('.box');
-  box.style.background = `hsl(${h}, ${s}%, ${l}%)`;
+const thumb = document.getElementById('difficultyThumb');
+const label = document.getElementById('difficultyLabel');
+const dots = document.querySelectorAll('.difficulty-dot');
 
-  const name = await getColorName(h, s, l);
-  box.textContent = name;
+const THUMB_POSITIONS = [5, 29, 53];
+
+function setDifficulty(index) {
+  currentDifficulty = index;
+  thumb.style.left = THUMB_POSITIONS[index] + 'px';
+  label.textContent = DIFFICULTIES[index];
+  dots.forEach((dot, i) => {
+    dot.style.opacity = i === index ? '0' : '1';
+  });
 }
 
-init();
+document.getElementById('difficultyTrack').addEventListener('click', () => {
+  setDifficulty((currentDifficulty + 1) % 3);
+});
+
+requestAnimationFrame(() => setDifficulty(0));

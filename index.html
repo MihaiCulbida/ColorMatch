@@ -3,11 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@800;900&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
     <title>ColorMatch</title>
 </head>
 <body>
-    <div class="box">ColorMatch</div>
+    <div class="card">
+        <div class="card-top">
+            <h1 class="title">color</h1>
+            <p class="description">Description</p>
+        </div>
+
+        <div class="card-footer">
+            <div class="game-mode-circle">
+                <span>Game<br>mode</span>
+            </div>
+
+            <div class="difficulty">
+                <div class="difficulty-track" id="difficultyTrack">
+                    <div class="difficulty-thumb" id="difficultyThumb"></div>
+                    <div class="difficulty-dot" data-index="0"></div>
+                    <div class="difficulty-dot" data-index="1"></div>
+                    <div class="difficulty-dot" data-index="2"></div>
+                </div>
+                <span class="difficulty-label" id="difficultyLabel">Easy</span>
+            </div>
+
+            <div class="footer-right">
+                <button class="arrow-btn" id="startBtn">
+                    <img src="img/arrow.png" alt="Start">
+                </button>
+            </div>
+        </div>
+    </div>
 
     <script src="src/script.js"></script>
 </body>
